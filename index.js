@@ -10,7 +10,9 @@ import {postCreateValidation} from "./validations/post.js";
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 import multer from "multer";
 
-const MONGO_LINK = ''
+const MONGO_LINK = process.env.MONGO_LINK;
+const PORT = process.env.PORT || 4444;
+
 
 mongoose.connect(MONGO_LINK).then(()=>console.log('DB, ok!')).catch((err) =>console.log('DB, error!', err))
 
@@ -82,7 +84,7 @@ app.post('/upload/avatar', upload.single('avatar'), (req, res) =>{
 });
 
 
-app.listen(4444, (err)=>{
+app.listen(PORT, (err)=>{
     if(err){
         return console.log(err)
     }
