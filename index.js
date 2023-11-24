@@ -10,6 +10,7 @@ import {postCreateValidation} from "./validations/post.js";
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 import multer from "multer";
 
+//TODO: НИВ КОЕМ СЛУЧАЕ НЕЛЬЗЯ ЗАЛИВАТЬ ЭТО!!!!!!!!!!!!!!!!!!
 const MONGO_LINK = process.env.MONGO_LINK;
 const PORT = process.env.PORT || 4444;
 
@@ -36,9 +37,9 @@ app.use('/uploads', express.static('uploads'));
 
 
 
-// app.get('/', (req, res)=>{
-//     res.send('Hello, world!')
-// })
+app.get('/', (req, res)=>{
+    res.send('Hello, world!')
+})
 
 
 // app.post('/auth/login', (req, res)=>{
